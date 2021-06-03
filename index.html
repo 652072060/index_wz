@@ -13,40 +13,64 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <link rel="icon" type="image/ico" href="https://cdn.jsdelivr.net/gh/loulan0/index_wz@1.4/favicon.ico">
     <!-- https://cdn.jsdelivr.net/gh/loulan0/index_wz@1.1/css/head.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loulan0/index_wz@1.4/css/style4.css">
+    <link rel="stylesheet" href="css/style4.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loulan0/index_wz@1.4/css/style3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loulan0/index_wz@1.4/css/style2.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- 音乐 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loulan0/index_wz@1.1/css2/APlayer.min.css">
-    <div class="aplayer" data-id="5361153354" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-volume="0.35" "></div>
+    <script src="js/index.js"></script>
+    <div class="aplayer" data-id="5361153354" data-server="netease" data-type="playlist" data-fixed="true"
+        data-autoplay="true" data-volume="0.35"></div>
     <script src="https://cdn.jsdelivr.net/gh/loulan0/index_wz@1.1/css2/APlayer.min2.js "></script>
     <script src="https://cdn.jsdelivr.net/gh/loulan0/index_wz@1.1/css2/APlayer.min3.js "></script>
-    <!-- 百度统计 -->
     <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?5fe2e1be0d12bcb71d98ecf0d1beb8c6";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
-        
+        window.onload = function () {
+            //每1秒刷新时间
+            setInterval("NowTime()", 1000);
+        }
 
+        function NowTime() {
+            var now = new Date();
+            var n = now.getFullYear();
+            var y = now.getMonth() + 1;
+            var e = now.getDate();
+            var s = now.getHours();
+            var f = now.getMinutes();
+            var m = now.getSeconds();
+            n = check(n);
+            y = check(y);
+            e = check(e);
+            s = check(s);
+            f = check(f);
+            m = check(m);
+            var shijian = n + '-' + y + '-' + e + '-' + s + '-' + f + '-' + m;
+            document.querySelector('.s_j').innerHTML = "今天" + shijian;
+        }
+
+        function check(i) {
+            var num = (i < 10) ? ('0' + i) : i;
+            return num;
+        }
+    </script>
 </head>
 
 <body>
     <!-- 导航栏 -->
     <div id="site-topbar0">
         <div class="container0">
-            <div class="topbar-nav0">
+            <div class="logo">
+                <h1 class="logo_tit">
+                    <a href="https://www.zhangd.cn" title="楼兰圣殿">楼兰圣殿</a>
+                </h1>
+            </div>
+            <!-- <div class="topbar-nav0">
                 <ul style="padding-left:0;">
                     <li><a href="https://www.zhangd.cn/" target="_blank">首页</a></li>
-                    <li><a href="https://www.52pojie.cn/" target="_blank">破解论坛</a></li>
+                    
                 </ul>
-            </div>
+            </div> -->
             <div class="topbar-info0">
                 <ul>
                     <li><a href="https://news.cctv.com/" target="_blank">新闻</a></li>
@@ -62,7 +86,7 @@
         <div class="row my-card justify-content-center">
             <div class="col-lg-4 photo-bg"></div>
             <div class="col-lg-8 card">
-                <h1>Hi，我是张东，这里是我的主页！</h1>
+                <h2>Hi，我是张东，这里是我的主页！</h2>
                 <p>很荣幸您能访问我的网站！ 目前我仍在学习中，
                 </p>
                 <p>
@@ -70,16 +94,23 @@
 
                 </p>
 
-                <p>Catch me:</p>
+                <p>
+                    Catch me:
+                </p>
+
                 <div class="row">
-                    <a href="https://github.com/loulan0/index_wz" target="_blank" class="btn btn-primary col-lg-4">GitHub</a>
+                    <a href="https://github.com/loulan0/index_wz" target="_blank"
+                        class="btn btn-primary col-lg-4">GitHub</a>
                     <!-- button -->
-                    <a href="https://nav.sbkko.com/" target="_blank" class="btn btn-secondary col-lg-4">外链工具箱</a>
-                    <a href="https://www.vpsor.cn/?userCode=hh15735" target="_blank" class="btn btn-success col-lg-4">硅云主页</a>
+                    <a href="https://www.vpsor.cn/?userCode=hh15735" target="_blank"
+                        class="btn btn-secondary col-lg-4">硅云</a>
+                    <a href="https://www.loulansd.com" target="_blank" class="btn btn-success col-lg-4">楼兰论坛</a>
                 </div>
 
 
-                <h4 class="mt-4" style="margin-top:0;">or, keep your eyes on</h4>
+                <h4 class="mt-4" style="margin-top:0;">
+                    <span class="s_j"></span><br>
+                    or, keep your eyes on</h4>
                 <!-- <ul class="social mt-1">
                     <li><a href="https://weibo.com/u/5223004318"><i class="fab fa-weibo " aria-hidden="true"></i></a></li>
                     <li><a href="https://github.com/kaygb"><i class="fab fa-github" aria-hidden="true"></i></a></li>
@@ -91,7 +122,9 @@
                     <p>
                         <!--<a href="http://beian.miit.gov.cn/" target="_blank">豫ICP备19002054号-1</a>-->
                         <br> 鸣谢：
-                        <a href="https://www.vpsor.cn/?userCode=hh15735" target="_blank" rel="nofollow">硅云</a><br>
+                        <a href="https://www.vpsor.cn/?userCode=hh15735" target="_blank" rel="nofollow"
+                            class="nofollow">硅云</a>|
+                        <a href="https://www.loulansd.com" target="_blank" rel="nofollow" class="nofollow">楼兰论坛</a><br>
                         <!-- <a href="https://console.upyun.com/register/?invite=r1FdZxBoH" target="_blank" rel="nofollow"><img src="https://cdn.jsdelivr.net/gh/kaygb/blog-images/img/20200320214011.png" style="width:50px;"></a> -->
                         Copyright 2018 - Now <a href="https://www.zhangd.cn/" target="_blank">楼兰圣殿</a>
                     </p>
@@ -103,5 +136,6 @@
 
     </div>
     <!-- 网易云<iframe frameborder="no " border="0 " marginwidth="0 " marginheight="0 " width=294 height=110 src="https://music.163.com/outchain/player?type=0&id=5361153354&auto=1&height=90 "></iframe> -->
+</body>
 
 </html>
