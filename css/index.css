@@ -1,5 +1,5 @@
 #site-topbar0 {
-    position: fixed;
+    display: flex;
     top: 0;
     z-index: 1;
     width: 100%;
@@ -7,7 +7,9 @@
     line-height: 70px;
     background-color: #fff
 }
-
+#site-topbar0 {
+    flex: 1;
+}
 li {
     list-style: none
 }
